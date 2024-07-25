@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  background-color: #9f1c6b;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .img-container {
+    height: 50px;
+    img {
+      height: 100%;
+    }
+  }
+
+
+  .header-right-side {
+    display: flex;
+    align-items: center;
+  }
+}
+
+span {
+  color: white;
+}

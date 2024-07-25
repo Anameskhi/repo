@@ -1,0 +1,18 @@
+<h5 mat-dialog-title>{{ isEdit? "Edit profile item" : "Add profile Item"}}</h5>
+<div mat-dialog-content>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Key</mat-label>
+      <input matInput formControlName="key" placeholder="Enter Key" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Value</mat-label>
+      <input matInput formControlName="value" placeholder="Enter Value" />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSubmit()">{{isEdit? "Edit" : "Add"}}</button>
+</div>

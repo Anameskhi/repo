@@ -1,0 +1,28 @@
+<header>
+  <mat-toolbar color="primary" class="header">
+    <mat-toolbar-row>
+      <span class="logo" routerLink="/products-list">Cloudonix</span>
+      <span
+        routerLink="/products-list"
+        style="cursor: pointer"
+        class="material-icons"
+      >
+        home
+      </span>
+
+      <span class="example-spacer"></span>
+      <div class="header-right-side">
+      <span>Log out</span>
+        <button
+          (click)="openDialog()"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+        >
+          <span class="material-icons"> logout </span>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+:host ::ng-deep .mat-mdc-paginator-container {
+  justify-content: center;
+}
+:host ::ng-deep .mat-mdc-paginator-page-size {
+  display: none;
+}
+

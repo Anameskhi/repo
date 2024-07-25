@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.label {
+  flex: 1;
+  font-weight: bold;
+  color: #555;
+}
+
+.value {
+  flex: 2;
+  color: #777;
+}
+
+.profile-section {
+  margin-top: 20px;
+}
+
+.profile-section h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button-group button {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    margin-bottom: 5px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-group button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+:host ::ng-deep.add-card {
+  display: flex;
+  border: none;
+  text-decoration: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+:host ::ng-deep.add-card__button {
+  font-size: 1rem;
+}
+
+:host ::ng-deep.dialog-buttons {
+  margin-top: 7rem;
+}
+
+:host ::ng-deep.active {
+  color: green;
+}
+
+:host ::ng-deep.deactivated {
+  color: red;
+}
+
+:host ::ng-deep.deactivated-card {
+  opacity: 0.3;
+}

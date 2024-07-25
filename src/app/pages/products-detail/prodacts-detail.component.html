@@ -1,0 +1,83 @@
+<div *ngIf="currentProduct" class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row" *ngIf="currentProduct?.name">
+        <div class="col-sm-3 label">Product Name</div>
+        <div class="col-sm-9 value">{{ currentProduct.name }}</div>
+      </div>
+      <hr *ngIf="currentProduct?.name" />
+
+      <div class="row" *ngIf="currentProduct?.sku">
+        <div class="col-sm-3 label">SKU</div>
+        <div class="col-sm-9 value">{{ currentProduct.sku }}</div>
+      </div>
+      <hr *ngIf="currentProduct?.sku" />
+
+      <div class="row" *ngIf="currentProduct?.cost">
+        <div class="col-sm-3 label">Cost</div>
+        <div class="col-sm-9 value">{{ currentProduct.cost }}</div>
+      </div>
+      <hr *ngIf="currentProduct?.cost" />
+
+      <div class="profile-section" *ngIf="currentProduct?.profile">
+        <h4>Profile</h4>
+        <hr />
+        <div class="row" *ngIf="currentProduct?.profile?.type">
+          <div class="col-sm-3 label">Type</div>
+          <div class="col-sm-9 value">{{ currentProduct.profile.type }}</div>
+        </div>
+        <hr *ngIf="currentProduct?.profile?.type" />
+
+        <div class="row" *ngIf="currentProduct?.profile?.available !== undefined">
+          <div class="col-sm-3 label">Available</div>
+          <div class="col-sm-9 value">
+            {{ currentProduct.profile.available }}
+          </div>
+        </div>
+        <hr *ngIf="currentProduct?.profile?.available !== undefined" />
+
+        <div class="row" *ngIf="currentProduct?.profile?.backlog !== undefined">
+          <div class="col-sm-3 label">Backlog</div>
+          <div class="col-sm-9 value">{{ currentProduct.profile.backlog }}</div>
+        </div>
+        <hr *ngIf="currentProduct?.profile?.backlog !== undefined" />
+      </div>
+
+      <div class="row" *ngIf="currentProduct?.description">
+        <div class="col-sm-3 label">Description</div>
+        <div class="col-sm-9 value">{{ currentProduct.description }}</div>
+      </div>
+      <hr *ngIf="currentProduct?.description" />
+
+      <!-- Display Custom Properties -->
+      <div *ngIf="currentProduct?.profile?.customPairs">
+        <h4>Custom Properties</h4>
+        <hr />
+        <div *ngFor="let key of objectKeys(currentProduct.profile.customPairs)">
+          <div class="row">
+            <div class="col-sm-3 label">{{ key }}</div>
+            <div class="col-sm-9 value">{{ currentProduct.profile.customPairs[key] }}</div>
+          </div>
+          <hr />
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button
+          (click)="onEditClick(currentProduct)"
+          mat-flat-button
+          color="accent"
+        >
+          Edit Product
+        </button>
+        <button
+          (click)="openDialog()"
+          mat-flat-button
+          color="warn"
+        >
+          Delete Product
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
